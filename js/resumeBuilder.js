@@ -4,11 +4,12 @@ This is empty on purpose! Your code to build the resume will go here.
 var bio = {
   "name": "Nick Daniel",
   "role": "Web Developer",
-  "contacts": {"mobile": "123-4568",
-    "email": "nick,daniel@gmail.com",
-    "github": "NDaniel1096",
-    "twitter": "@notNickDaniel",
-    "location": "Ardmore, Al"
+  "contacts": {
+        "mobile": "123-4568",
+        "email": "nick,daniel@gmail.com",
+        "github": "NDaniel1096",
+        "twitter": "@notNickDaniel",
+        "location": "Ardmore, Al"
   },
   "welcomeMessage": "Welcome to my Resume",
   "skills": [
@@ -22,12 +23,17 @@ function bioDisplay() {
   var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
   var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 
-  $("#header").prepend(formattedRole);
-  $("#header").prepend(formattedName);
-  $("#header").append(formattedMobile);
-  $("#header").append(formattedEmail);
-  $("#header").append(formattedBioPic);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+    $("#header").append(formattedMobile);
+    $("#header").append(formattedEmail);
+    $("#header").append(formattedBioPic);
+    $("#header").append(formattedGithub);
+    $("#header").append(formattedTwitter);
+    
 
   if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
@@ -54,7 +60,12 @@ var education = {
       "location": "Orange Beach",
       "major": "Criminal Justice"
     }
-  ]
+  ],
+    "onlineClasses" : [
+        {
+            "name": "Udacity",
+        }
+    ]
 };
 
 function displayEd () {
